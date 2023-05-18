@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DeC-46-fDg">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Entries: 0-->
+        <scene sceneID="n3O-c4-vtF">
+            <objects>
+                <tableViewController id="aXS-AN-A5V" customClass="EntityListTableViewController" customModule="CoreDataPOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cTm-MO-76s">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" id="tMP-gO-hS5">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tMP-gO-hS5" id="vaI-W4-UTU">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aXS-AN-A5V" id="f7o-4i-Uqg"/>
+                            <outlet property="delegate" destination="aXS-AN-A5V" id="5GH-mu-RbQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Entries: 0" id="bSt-dy-hKu">
+                        <leftBarButtonItems>
+                            <barButtonItem image="arrow.clockwise" catalog="system" id="nv6-Up-pTj">
+                                <connections>
+                                    <action selector="refreshButtonPressed:" destination="aXS-AN-A5V" id="E2x-er-C01"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="timer.circle" catalog="system" id="k4Y-oy-38H">
+                                <connections>
+                                    <action selector="timerButtonPressed:" destination="aXS-AN-A5V" id="Jip-0J-jO3"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem image="plus" catalog="system" id="ukI-yD-16D">
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="aXS-AN-A5V" id="P3b-dE-Cfv"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="dice" catalog="system" id="K13-uf-EMh">
+                                <connections>
+                                    <action selector="diceButtonPressed:" destination="aXS-AN-A5V" id="eKm-fE-wY2"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="cTm-MO-76s" id="ri5-LY-qX1"/>
+                        <outlet property="timerButtonOutlet" destination="k4Y-oy-38H" id="6ZB-8j-9eG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FNS-89-xyB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="811" y="42"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="npN-I6-rXX">
+            <objects>
+                <navigationController id="DeC-46-fDg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ugS-sg-Hij">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aXS-AN-A5V" kind="relationship" relationship="rootViewController" id="bOT-jo-MVg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8vF-Nc-Yo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-95" y="42"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
+        <image name="dice" catalog="system" width="128" height="116"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="timer.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
