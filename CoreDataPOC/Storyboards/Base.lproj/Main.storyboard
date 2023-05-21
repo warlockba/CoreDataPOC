@@ -42,6 +42,11 @@
                                     <action selector="timerButtonPressed:" destination="aXS-AN-A5V" id="Jip-0J-jO3"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem image="printer" catalog="system" id="vqs-pz-YFK">
+                                <connections>
+                                    <action selector="printButtonPressed:" destination="aXS-AN-A5V" id="nyP-Z6-NAi"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem image="plus" catalog="system" id="ukI-yD-16D">
@@ -86,6 +91,7 @@
         <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <image name="dice" catalog="system" width="128" height="116"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="printer" catalog="system" width="128" height="111"/>
         <image name="timer.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

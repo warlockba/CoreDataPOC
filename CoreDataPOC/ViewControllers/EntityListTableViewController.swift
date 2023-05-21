@@ -21,6 +21,19 @@ class EntityListTableViewController: UITableViewController, NSFetchedResultsCont
     
     @IBOutlet weak var timerButtonOutlet: UIBarButtonItem!
     
+    @IBAction func printButtonPressed(_ sender: UIBarButtonItem) {
+        if let safeFetchedObjects = studentRepository.fetchedResultsController.fetchedObjects {
+            for student in safeFetchedObjects {
+                if let safeName = student.name, let safeDate = student.date {
+                    print("\(safeName):\(safeDate)")
+                }
+                else {
+                    print("!!!KRAP!!!")
+                }
+            }
+        }
+    }
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
@@ -64,7 +77,7 @@ class EntityListTableViewController: UITableViewController, NSFetchedResultsCont
             timerGeneration = true
             timerButtonOutlet.image = UIImage(systemName: "timer.circle.fill")
             // start the generation
-            timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { [weak self] _ in
+            timer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true, block: { [weak self] _ in
                 DispatchQueue.main.async {
                     if let safeSelf = self {
                         let randomName = "\(EntityListTableViewController.randomString(length: Int.random(in: 3..<8))) \(EntityListTableViewController.randomString(length: Int.random(in: 3..<8)))"
